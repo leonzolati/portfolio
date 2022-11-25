@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <title>Zolati.dev | Portfolio</title>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="header" class="fill"></div>
+            
+            <div id="screen">
+                <img src="./images/scanlines.png" id = "scan" class="noselect">
+                <img src="./images/bezel.png" id = "bezel" class="noselect">
+                
+                <div id="terminal">
+                  <textarea name="prev" id="prev" class="scroll" readonly autocomplete="off" rows="3"></textarea>
+                </div>
+              
+                  <div id="command" onclick="$('texter').focus();">
+                    <textarea
+                      type="text"
+                      id="texter"sd
+                      onkeyup="typeIt(this, event)"
+                      onkeydown="typeIt(this, event); 
+                                 moveIt(this.value.length, event)"
+                      onkeypress="typeIt(this, event);"
+                      autofocus
+                    ></textarea>
+              
+                    <div id="liner">
+                      <span id="typer"></span><b class="cursor" id="cursor">█</b>
+                    </div>
+                  </div>
+                  
+            </div>
+
+            <div id="footer" class="fill"></div>
+        </div> 
+        
+      <script src="js/caret.js"></script>
+      <script src="js/main.js"></script>
+
+    </body>
+</html>

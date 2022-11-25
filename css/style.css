@@ -1,0 +1,152 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    background-color: black;
+
+    font-family: VT323;
+    color: rgb(139, 199, 113);
+    text-shadow: 1px 1px 1px rgb(90, 115, 54), 0 0 1em rgb(90, 115, 54), 0 0 0.2em rgb(90, 115, 54);
+}
+
+p, #user, #textarea, #command, #prev{
+    font-family: VT323;
+    color: rgb(139, 199, 113);
+    text-shadow: 1px 1px 1px rgb(90, 115, 54), 0 0 1em rgb(90, 115, 54), 0 0 0.2em rgb(90, 115, 54);
+    font-size: 1.5em;
+}
+
+/*Monitor Start*/
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+}
+
+#container{
+    top: 10vh;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+#screen {
+    position: relative;
+    width: 100vmin;
+    height: 80vmin;
+    margin: auto;
+    flex: 0 1 auto;
+
+    background-color: rgb(11, 66, 11);
+}
+
+
+#scan, #bezel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    pointer-events: none;
+
+}
+
+#scan{
+    opacity: 60%;
+}
+
+.fill{
+    position: relative;
+    background-color: black;
+    flex: 1 1 auto;
+}
+/*Monitor Stop*/
+
+/*Terminal Start*/
+#terminal{
+    overflow: hidden;
+    padding-top: 9%;
+    padding-left: 9%;
+    left: 0;
+    right: 0;
+}
+
+#prev{
+    max-height: 57vmin;
+    width: 90%;
+
+    border:none;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    /* overflow: hidden; */
+
+    scrollbar-width: 0 !important;
+
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+    bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    scrollbar-width: none; /* Firefox, other Gecko */
+}
+
+.scroll::-webkit-scrollbar {
+    display: none; /* Safari/Chrome, other WebKit */
+    -ms-overflow-style: none; /* IE and Edge*/
+ }
+/*Terminal Stop*/
+
+/* Input area Start */
+#texter {
+    left: -100vw;
+    position: absolute;
+}
+.cursor {
+    position: relative;
+
+    font-size: 0.08em;
+    color: rgb(139, 199, 113);
+    background-color: rgb(139, 199, 113);
+
+    opacity: 0.3;
+    height: 1.5em;
+    width: 6em;
+    transform: translateY(3px);
+    
+    overflow: hidden;
+    text-indent: -5em;
+    display: inline-block;
+    text-decoration: blink;
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+#command {
+    overflow: hidden;
+    z-index: 1;
+    padding-left: 9%;
+    cursor: text;
+    color: rgb(139, 199, 113);
+}
+
+#liner::before {
+    color: rgb(139, 199, 113);
+    content: "c:\005Cusers\005Ctempuser>";
+}
+/* Input Area End */
+
+
+
+
+
