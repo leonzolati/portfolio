@@ -13,7 +13,7 @@ p, #user, #textarea, #command, #prev{
     font-family: VT323;
     color: rgb(139, 199, 113);
     text-shadow: 1px 1px 1px rgb(90, 115, 54), 0 0 1em rgb(90, 115, 54), 0 0 0.2em rgb(90, 115, 54);
-    font-size: 1.5em;
+    font-size: 2.1vmin;
 }
 
 /*Monitor Start*/

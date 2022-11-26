@@ -10,7 +10,7 @@ var help =  "education: relevant education I have\n" +
             "projects: a description of some projects I have worked on\n"+
             "clear: clears the terminal\n\n";
 
-var projects =  "Zolati.dev\nThis website was written in HTML, CSS, and Javascript and deployed on AWS using Lambda, API Gateway, and Route 53.\n\n"+
+var projects =  "Zolati.dev\nThis website was written in HTML, CSS, and Javascript and deployed on AWS using S3, cloudfront, ACM, and Route 53.\n\n"+
                 "Next Stop\nA low-cost GPS tracking app for regional public transport services.\n    -  A proof of concept android app written in Java\n    - Uses Google Maps API and Google Firebase to display the location of “bus” users to “general” users\n\n"+
                 "Fitomatic\nAn exercise partener app to help you find your next gym buddy, running partner and much more.\n    - A two-month-long project involving four members requiring a high degree of teamwork, individual learning, regular meetings, and a commitment to deadlines.\n    - Was responsible for front-end development, UI design and minor back-end development i.e. Adapters for RecyclerViews.\n\n";
 var skills = "Languages: Java, C/C++, Python, HTML/CSS, JavaScript, ARM  assembly.\nFrameworks and Databases: AWS, Android Development, Firebase (database and authentication), PostgreSQL\nTools: Git (including for agile workflows), Gitlab CI/CD, Gradle\n\n";
