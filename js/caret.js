@@ -1,7 +1,3 @@
-function $(elid) {
-  return document.getElementById(elid);
-}
-
 var cursor;
 window.onload = init;
 
@@ -13,6 +9,12 @@ cursor = document.getElementById("cursor");
 cursor.style.left = "0px";
 }
 
+/**
+ * Reformats a string to remove any /n for more control
+ * 
+ * @param {*} txt the text to reformat 
+ * @returns text without new lines
+ */
 function newLineToBreakRule(txt) {
   return txt.replace(/\n/g, '');
 }
@@ -21,13 +23,13 @@ function newLineToBreakRule(txt) {
  * Types the value in from to the terminal input
  * 
  * @param {*} from the textarea from which the function is being called
- * @param {*} e the event triggering the function
+ * @param {*} event the event triggering the function
  */
-function typeIt(from, e) {
-  e = e || window.event;
-var w = document.getElementById("typer");
-  var tw = from.value;
-  w.innerHTML = newLineToBreakRule(tw);
+function typeIt(from, event) {
+  event = event || window.event;
+  var typer = document.getElementById("typer");
+  var value = from.value;
+  typer.innerHTML = newLineToBreakRule(value);
 }
 
 /**
@@ -35,15 +37,17 @@ var w = document.getElementById("typer");
  * Function
  * 
  * @param {*} count the length to move the caret
- * @param {*} e the event triggering the funtion
+ * @param {*} event the event triggering the funtion
  */
-function moveIt(count, e) {
-e = e || window.event;
-var keycode = e.keyCode || e.which;
-if (keycode == 37 && parseInt(cursor.style.left) >= (0 - ((count - 1) * 10))) {
-  cursor.style.left = parseInt(cursor.style.left) - 10 + "px";
-} else if (keycode == 39 && (parseInt(cursor.style.left) + 10) <= 0) {
-  cursor.style.left = parseInt(cursor.style.left) + 10 + "px";
-}
+function moveIt(count, event) {
+  event = event || window.event;
+  var keycode = event.keyCode || event.which;
+  
+  if (keycode == 37 && parseInt(cursor.style.left) >= (0 - ((count - 1) * 10))) {
+    cursor.style.left = parseInt(cursor.style.left) - 10 + "px";
+  } 
+  else if (keycode == 39 && (parseInt(cursor.style.left) + 10) <= 0) {
+    cursor.style.left = parseInt(cursor.style.left) + 10 + "px";
+  }
 }
 
