@@ -1,3 +1,4 @@
+//get the HTML elements
 var prev = document.getElementById("prev");
 var before = document.getElementById("before");
 var liner = document.getElementById("liner");
@@ -5,6 +6,8 @@ var command = document.getElementById("typer");
 var textarea = document.getElementById("texter"); 
 var terminal = document.getElementById("terminal");
 
+
+//The text to be displayed
 var help =  "education: relevant education I have\n" +
             "skills: a short list of general technical skills\n"+
             "projects: a description of some projects I have worked on\n"+
@@ -16,14 +19,18 @@ var projects =  "Zolati.dev\nThis website was written in HTML, CSS, and Javascri
 var skills = "Languages: Java, C/C++, Python, HTML/CSS, JavaScript, ARM  assembly.\nFrameworks and Databases: AWS, Android Development, Firebase (database and authentication), PostgreSQL\nTools: Git (including for agile workflows), Gitlab CI/CD, Gradle\n\n";
 var education = "Australian National University\n    - Batchelor of Information Technology (2021 - present)\nUniversity of Tasmania\n    - High Achiever Program in Computer Science (2020)\n\n";
 
+//Globals
 var git = 0;
 var commands = [];
 
 window.addEventListener("keyup", enterKey);
 
-
+//call the init function
 init();
 
+/**
+ * Initialises the terminal to display the zolati.dev and help propt
+ */
 function init(){
   //init
   textarea.value = "";
@@ -37,6 +44,11 @@ function init(){
   addLine("Welcome to my Portfolio Site.\nType 'help' for a list of commands\n\n");
 }
 
+/**
+ * Adds the relevant text to the terminal
+ * 
+ * @param {*} e the event triggering the function
+ */
 function enterKey(e) {
   if (e.keyCode == 13) {
     commands.push(command.innerHTML);
@@ -48,6 +60,11 @@ function enterKey(e) {
   }
 }
 
+/**
+ * Excecutes a command given by the user
+ * 
+ * @param {*} cmd the command to execute
+ */
 function commander(cmd) {
   switch (cmd.toLowerCase()) {
     case("education"):
@@ -71,10 +88,14 @@ function commander(cmd) {
   }
 }
 
+/**
+ * Helper to add text to the terminal screen
+ * 
+ * @param {*} text the text to display on the terminal
+ */
 function addLine(text) {
   prev.value += text;
   prev.rows = prev.value.split("\n").length+1;
   prev.scrollTop = prev.scrollHeight;
-  
 }
 
